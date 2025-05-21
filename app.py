@@ -69,16 +69,10 @@ st.markdown("""
 # Télécharger les ressources NLTK nécessaires
 @st.cache_resource
 def download_nltk():
-    try:
-        nltk.data.find('tokenizers/punkt')
-    except LookupError:
-        nltk.download('punkt')
-    try:
-        nltk.data.find('corpora/stopwords')
-    except LookupError:
-        nltk.download('stopwords')
+    import nltk
+    nltk.download("punkt")
+    nltk.download("stopwords")
 
-download_nltk()
 
 # Chargement des données
 @st.cache_data
