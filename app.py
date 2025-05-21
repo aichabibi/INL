@@ -736,10 +736,12 @@ def main():
             
             # Calculer des métriques de complexité
             if "texte_complet" in df.columns:
-                df["complexite_lexicale"] = df["texte_complet"].apply(
-                    lambda x: len(set(re.findall(r"\b\w+\b", str(x).lower()))) / len(re.findall(r"\b\w+\b", str(x).lower()))
-                    if len(re.findall(r"\b\w+\b", str(x).lower())) > 0 else 0
-                )
+                def calculer_complexite_lexicale(texte):
+                    tokens = re.findall(r"\b\w+\b", str(texte).lower())
+                    return len(set(tokens)) / len(tokens) if tokens else 0
+            
+                df["complexite_lexicale"] = df["texte_complet"].apply(calculer_complexite_lexicale)
+
 
                 
                 fig_complexite = px.box(
