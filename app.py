@@ -413,7 +413,7 @@ def analyser_correlation_niveau_longueur(df):
 
 # Interface principale
 def main():
-    st.markdown('<h1 class="main-header">Système Avancé de Classification et d\'Analyse des Cours</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="main-header">Système de Classification et d\'Analyse des Cours</h1>', unsafe_allow_html=True)
 
     # Barre latérale
     with st.sidebar:
