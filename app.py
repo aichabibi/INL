@@ -22,8 +22,8 @@ import time
 
 # Configuration de la page
 st.set_page_config(
-    page_title="Système Avancé de Classification des Cours",
-    page_icon="📚",
+    page_title="Système de Classification des Cours",
+    page_icon="",
     layout="wide",
     initial_sidebar_state="expanded"
 )
