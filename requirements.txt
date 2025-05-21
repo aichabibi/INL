@@ -8,4 +8,4 @@ wordcloud>=1.9
 matplotlib>=3.7
 seaborn>=0.12
 numpy>=1.23
-torch==2.1.2
+torch>=2.1,<2.6
