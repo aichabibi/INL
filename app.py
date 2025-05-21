@@ -139,8 +139,12 @@ def classer_cours_avance(df):
     def extraire_mots_cles(text, min_length=3):
         text = text.lower()
         stop_words = set(stopwords.words('french') + stopwords.words('english'))
-        tokens = word_tokenize(text)
+    
+        # Tokenisation simple sans appel à punkt
+        tokens = re.findall(r"\b\w+\b", text)
+    
         return [word for word in tokens if word.isalpha() and len(word) >= min_length and word not in stop_words]
+
     
     df["mots_cles"] = df["texte_complet"].apply(extraire_mots_cles)
     
